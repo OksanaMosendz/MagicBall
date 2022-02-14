@@ -115,21 +115,6 @@ $(document).ready(function () {
       }
       return true;
     }
-
-    onClickAskBtn() {
-      if (magic8Ball.allQuestionsAnswers.length > 0) {
-        $('#dialog').dialog('close');
-      }
-
-      magic8Ball.getQuestion();
-      const isQuestionValid = magic8Ball.setQuestionValidation();
-
-      if (isQuestionValid) {
-        magic8Ball.showQuestion();
-      } else return;
-      magic8Ball.getAnswer();
-      magic8Ball.getAllQuestionsAnswers();
-    }
   }
 
   const listofanswers = [
@@ -161,5 +146,24 @@ $(document).ready(function () {
     'Please,use only Cyrillic alphabet!',
   );
 
-  $('.questionButton').click(magic8Ball.onClickAskBtn);
+  const onClickAskBtn = () => {
+    if (magic8Ball.allQuestionsAnswers.length > 0) {
+      $('#dialog').dialog('close');
+    }
+
+    magic8Ball.getQuestion();
+
+    if (!magic8Ball.question) {
+      return;
+    }
+    const isQuestionValid = magic8Ball.setQuestionValidation();
+
+    if (isQuestionValid) {
+      magic8Ball.showQuestion();
+    } else return;
+    magic8Ball.getAnswer();
+    magic8Ball.getAllQuestionsAnswers();
+  };
+
+  $('.questionButton').click(onClickAskBtn);
 });
