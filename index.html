@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<title>MAGIC 8 BALL</title>
+	<link href="https://fonts.googleapis.com/css?family=Open+Sans:400italic,400,700|Montserrat:400,700" rel="stylesheet"
+		type="text/css">
+	<script src="https://ajax.googleapis.com/ajax/libs/jquery/1.12.2/jquery.min.js"></script>
+	<script src="https://ajax.googleapis.com/ajax/libs/jqueryui/1.11.3/jquery-ui.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.js"></script>
+
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/jquery-modal/0.9.1/jquery.modal.min.css" />
+	<link rel="stylesheet" type="text/css" href="style.css">
+
+</head>
+
+<body>
+	<div class="page">
+
+		<header>
+			<h1>MAGIC&nbsp;<span>8</span>&nbsp;BALL</h1>
+		</header>
+
+		<div class="ball">
+			<a href="#ex1" rel="modal:open"><button class="questionsAnswersListBtn" type="button"
+					title="Questions&Answers list"><img src="./images/note.png" width="16" /></button></a>
+			<img class="8ball"
+				src="https://s3.amazonaws.com/media.skillcrush.com/skillcrush/wp-content/uploads/2016/09/magic8ballQuestion.png">
+			<p class="answer">THIS IS WHERE THE ANSWER GOES</p>
+			<div class="error">
+				<p class="error-text"></p>
+			</div>
+
+		</div>
+
+		<div class="button">
+			<button class="questionButton">ASK ME ANYTHING </button>
+		</div>
+
+		<footer>
+			<p>&copy; Skillcrush 2021</p>
+		</footer>
+
+		<div id="ex1" class="modal">
+			<p class="notification">You didn't ask anything yet.</p>
+			<ul class="questionsAnswersList"></ul>
+		</div>
+		<div id="dialog" title=""></div>
+		<script type="text/javascript" src="script.js"></script>
+	</div>
+</body>
+
+</html>
